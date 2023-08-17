@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "BTCar"
 include(":app")
+include(":reverseengineering")
