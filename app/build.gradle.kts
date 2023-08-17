@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.cmdv.btcar"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.cmdv.btcar"

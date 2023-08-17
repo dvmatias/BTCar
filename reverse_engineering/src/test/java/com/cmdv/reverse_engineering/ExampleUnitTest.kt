@@ -1,4 +1,4 @@
-package com.cmdv.reverseengineering
+package com.cmdv.reverse_engineering
 
 import org.junit.Test
 
