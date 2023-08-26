@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":common")))
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
