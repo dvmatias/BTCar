@@ -52,10 +52,12 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":menu")))
-    implementation(project(mapOf("path" to ":connectivity")))
-    implementation(project(mapOf("path" to ":play")))
     implementation(project(mapOf("path" to ":common")))
+    implementation(project(mapOf("path" to ":connectivity")))
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":menu")))
+    implementation(project(mapOf("path" to ":play")))
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
