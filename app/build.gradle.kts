@@ -52,6 +52,9 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":menu")))
+    implementation(project(mapOf("path" to ":connectivity")))
+    implementation(project(mapOf("path" to ":play")))
     implementation(project(mapOf("path" to ":common")))
 
     implementation("androidx.core:core-ktx:1.10.1")

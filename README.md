@@ -5,9 +5,11 @@ Content
 2. [Android Modules](#android-modules)
    1. [App](#app)
    2. [Common](#common)
-   3. [Connectivity](#connç)
-   4. [Menu](#menu)
-   5. [Play](#play)
+   3. [Connectivity](#connectivity)
+   4. [Data](#data)
+   5. [Domain](#domain)
+   6. [Menu](#menu)
+   7. [Play](#play)
 
 ## Overview
 TBA
@@ -31,6 +33,14 @@ The **connectivity** module holds classes and files that stores the logic to:
 * Check the **controller** BT module status.
 * Create the BT communication between the phone (from now on **controller**) and the **car**.
 * End the BT connection.
+
+### Data 
+
+Data layer (to be continued...)
+
+### Domain
+
+Data layer (to be continued...)
 
 ### Menu
 
