@@ -6,21 +6,16 @@ import androidx.lifecycle.viewModelScope
 import com.cmdv.common.Constants
 import com.cmdv.domain.uievent.menu.MenuUIEvent
 import com.cmdv.domain.uistate.menu.MenuUIState
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MenuActivityViewModel : ViewModel() {
-    private val _uiState =
-        MutableStateFlow(
-            MenuUIState(
-                isControllerBluetoothModulePresent = false,
-                isControllerBluetoothModuleOn = false
-            )
+    private val _uiState = MutableStateFlow(
+        MenuUIState(
+            isControllerBluetoothModulePresent = false, isControllerBluetoothModuleOn = false
         )
+    )
     val uiState: StateFlow<MenuUIState> = _uiState
 
     /**
