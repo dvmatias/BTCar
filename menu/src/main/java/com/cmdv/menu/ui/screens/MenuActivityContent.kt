@@ -22,7 +22,8 @@ import com.cmdv.menu.ui.theme.BTCarTheme
 
 @Composable
 fun MenuActivityContent(
-    uiState: MenuUIState, viewModel: MenuActivityViewModel
+    uiState: MenuUIState,
+    viewModel: MenuActivityViewModel
 ) {
     Box(
         modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center
@@ -49,17 +50,18 @@ fun MenuActivityContent(
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFFFFFFL, showSystemUi = true)
-@Composable
-fun PreviewMenuActivityContent() {
-    BTCarTheme {
-        MenuActivityContent(
-            MenuUIState(
-                isControllerBluetoothModulePresent = true,
-                isControllerBluetoothModuleOn = true,
-                isControllerConnectedToCar = false,
-                isLoading = false
-            ), MenuActivityViewModel()
-        )
-    }
-}
+// TODO
+//@Preview(showBackground = true, backgroundColor = 0xFFFFFFL, showSystemUi = true)
+//@Composable
+//fun PreviewMenuActivityContent() {
+//    BTCarTheme {
+//        MenuActivityContent(
+//            MenuUIState(
+//                isControllerBluetoothModulePresent = true,
+//                isControllerBluetoothModuleOn = true,
+//                isControllerConnectedToCar = false,
+//                isLoading = false
+//            ), MenuActivityViewModel()
+//        )
+//    }
+//}

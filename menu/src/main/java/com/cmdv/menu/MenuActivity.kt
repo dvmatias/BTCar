@@ -13,7 +13,9 @@ import androidx.compose.ui.Modifier
 import com.cmdv.menu.ui.MenuActivityViewModel
 import com.cmdv.menu.ui.screens.MenuActivityContent
 import com.cmdv.menu.ui.theme.BTCarTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MenuActivity : ComponentActivity() {
     private val viewModel: MenuActivityViewModel by viewModels()
 
