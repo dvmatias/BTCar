@@ -39,7 +39,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.2"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     hilt {
         enableAggregatingTask = true
@@ -53,7 +53,7 @@ android {
 
 dependencies {
     implementation(project(mapOf("path" to ":common")))
-    implementation(project(mapOf("path" to ":connectivity")))
+    implementation(project(mapOf("path" to ":connection")))
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":menu")))
@@ -74,8 +74,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-android-compiler:2.47")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 }
 
 // Allow references to generated code

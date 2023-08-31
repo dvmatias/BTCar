@@ -16,7 +16,7 @@ dependencyResolutionManagement {
 rootProject.name = "BTCar"
 include(":app")
 include(":common")
-include(":connectivity")
+include(":connection")
 include(":menu")
 include(":play")
 include(":domain")
