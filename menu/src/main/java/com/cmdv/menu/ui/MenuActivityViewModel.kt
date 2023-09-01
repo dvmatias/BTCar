@@ -6,57 +6,29 @@ import androidx.lifecycle.viewModelScope
 import com.cmdv.common.Constants
 import com.cmdv.domain.uievent.menu.MenuUIEvent
 import com.cmdv.domain.uistate.menu.MenuUIState
-import com.cmdv.domain.usecases.GetBluetoothAdapterInfoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MenuActivityViewModel @Inject constructor(
-    private val getBluetoothAdapterInfoUseCase: GetBluetoothAdapterInfoUseCase
-) : ViewModel() {
-    private val _uiState = MutableStateFlow(
-        MenuUIState(
-            isControllerBluetoothModulePresent = false, isControllerBluetoothModuleOn = false
-        )
-    )
+class MenuActivityViewModel @Inject constructor() : ViewModel() {
+    private val _uiState = MutableStateFlow(MenuUIState())
     val uiState: StateFlow<MenuUIState> = _uiState
+
+    private val _event = MutableSharedFlow<MenuUIEvent>()
+    val event: SharedFlow<MenuUIEvent> = _event
 
     /**
      * TODO
      */
     fun onEvent(event: MenuUIEvent) {
         Log.d(Constants.TAG_LOG_D, "Event = $event")
-        when (event) {
-            is MenuUIEvent.Connect -> {
-                // TODO
-                getBluetoothAdapterInfo()
-            }
-
-            is MenuUIEvent.Start -> {
-                // TODO
-            }
-
-            else -> Log.d(Constants.TAG_LOG_D, "Event -> not handled")
-        }
-    }
-
-    private fun getBluetoothAdapterInfo() {
         viewModelScope.launch {
-            getBluetoothAdapterInfoUseCase(GetBluetoothAdapterInfoUseCase.Params())
-                .collect { responseWrapper ->
-                    Log.d(Constants.TAG_LOG_D, "data -> ${responseWrapper.data}")
-                }
+            _event.emit(event)
         }
-    }
-
-    private fun canConnect(): Boolean {
-        TODO()
-    }
-
-    private fun verifyIsControllerBluetoothModulePresent() {
-
     }
 }
