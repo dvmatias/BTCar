@@ -15,5 +15,4 @@ sealed class MenuUIEvent : UIEvent {
      * Ui event triggered when 'Start' button is clicked
      */
     data object Start : MenuUIEvent()
-    data class ControllerBluetoothModulePresent(val isPresent: Boolean) : MenuUIEvent()
 }
