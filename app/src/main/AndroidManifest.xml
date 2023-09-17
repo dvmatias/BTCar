@@ -2,6 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Request legacy Bluetooth permissions for devices on API 29,30. -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.ACCESS_BACKGROUND_LOCATION"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="30" />
+
+    <!-- Request Bluetooth permissions for devices on API 31,32. -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <!-- Needed only if your app communicates with already-paired Bluetooth
+             devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- Since Bluetooth is a basic requirement for our app -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+
     <application
         android:name=".app.AppBTCar"
         android:allowBackup="true"
@@ -14,7 +44,7 @@
         android:theme="@style/Theme.BTCar"
         tools:targetApi="31">
         <activity
-            android:name="com.cmdv.menu.MenuActivity"
+            android:name=".ui.BluetoothCarActivity"
             android:exported="true"
             android:theme="@style/Theme.BTCar">
             <intent-filter>
@@ -23,12 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="com.cmdv.connectivity.ConnectionActivity"
-            android:exported="false"
-            android:label="@string/title_activity_connection"
-            android:theme="@style/Theme.BTCar" />
     </application>
 
 </manifest>

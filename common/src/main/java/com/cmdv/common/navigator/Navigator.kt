@@ -2,7 +2,6 @@ package com.cmdv.common.navigator
 
 import android.app.Activity
 import android.os.Bundle
-import com.cmdv.common.Event
 
 /**
  * Contract. Declares all the functions to navigate between activities from different modules/features.

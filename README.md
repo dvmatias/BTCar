@@ -10,6 +10,12 @@ Content
    5. [Domain](#domain)
    6. [Menu](#menu)
    7. [Play](#play)
+3. [Use Cases](#use-cases)
+   1. [Menu Use Cases](#menu-use-cases)
+   2. [Connection Use Cases](#connection-use-cases)
+      1. [ConnectCellphoneToCarUseCase](#connectcellphonetocarusecase)
+   3. [Play Use Cases](#play-use-cases)
+4. [BT Connection Process](#bt-connection-process)
 
 ## Overview
 TBA
@@ -59,3 +65,43 @@ status:
 ### Play
 
 The **play** module holds the interface and the logic for that the user can drive the car.
+
+## Use Cases
+
+### Menu Use Cases
+
+### Connection Use Cases
+
+#### ConnectCellphoneToCarUseCase
+
+| Configs | Description                                 |
+|:-------:|:--------------------------------------------|
+| Action  | Cellphone is connected through BT to the car and the user see connection progress|
+| Input   | String (car MAC address)                    |
+| Output  | Periodic reports on connection status and if success the user is taken to PLAY screen.|
+
+
+### Play Use Cases
+
+El usuario puede enviar datos al auto via BT
+	- velocidad
+	- luces on/off
+	- giro izquierda/derecha
+    - INPUT: byte
+    - OUTPUT: Unit
+    - ACTION: None
+El usuario puede terminar la conexion con el auto
+    - INPUT:
+    - OUTPUT: Success (throwws on error)
+    - ACTION: Termina la conexion BT con el auto y redirige al usuario a la pantalla MENU
+
+
+
+## BT Connection Process
+
+1. Get **BT Adapter** instance.
+2. Check BT adapter **state**:
+   1. **Null**: means **controller** has no BT capabilities and the flow should be interrupted.
+   2. **Enabled**: Continue on step (3.).
+   3. **Disabled**: Ask the user to turn BT on on the cellphone.
+3. 

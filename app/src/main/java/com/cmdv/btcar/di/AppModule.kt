@@ -1,6 +1,6 @@
 package com.cmdv.btcar.di
 
-import com.cmdv.btcar.navigator.NavigatorImpl
+import com.cmdv.btcar.navigation.NavigatorImpl
 import com.cmdv.common.navigator.Navigator
 import dagger.Module
 import dagger.Provides
